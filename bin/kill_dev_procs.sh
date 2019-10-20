@@ -17,6 +17,7 @@ get_blocking_pids pids current_mount
 unique_pids=($(printf "%s\n" "${pids[@]}" | sort -u | tr '\n' ' '))
 for pid in "${unique_pids[@]}"
 do
+  echo "Killing: "$pid
   kill -9 $pid
 done
 
